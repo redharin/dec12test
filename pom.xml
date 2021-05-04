@@ -20,18 +20,25 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>3.0.0</version>
-			</plugin>
-			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<version>3.2.7</version>
 				<extensions>true</extensions>
 				<configuration>
-				<classifier>mule-application</classifier>
-                </configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.3.0</muleVersion>
+						<username>redharinapr21</username>
+						<password>Hasr@143</password>
+						<applicationName>dec12test</applicationName>
+						<environment>Sandbox</environment>
+						<workers>1</workers>
+						<workerType>Micro</workerType>
+						<properties>
+							<key>value</key>
+						</properties>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -66,15 +73,10 @@
         </repository>
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
-            <id>mulesoft-releases</id>
-            <name>mulesoft release repository</name>
-            <layout>default</layout>
-            <url>https://repository.mulesoft.org/releases/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+		<pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
